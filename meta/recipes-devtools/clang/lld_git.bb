@@ -5,6 +5,7 @@ SECTION = "devel"
 
 require common-clang.inc
 require common-source.inc
+require common-testsuite.inc
 
 LIC_FILES_CHKSUM = "file://lld/LICENSE.TXT;md5=ae7dc7c027b1fa89b5b013d391d3ee2b"
 
@@ -16,7 +17,7 @@ OECMAKE_SOURCEPATH = "${S}/lld"
 
 # Explicitly enable symlinks as the lld build doesn't call into the llvm setup
 # and turn that on.
-EXTRA_OECMAKE += "-DLLVM_INCLUDE_TESTS=OFF -DLLVM_USE_SYMLINKS=ON \
+EXTRA_OECMAKE += "-DLLVM_INCLUDE_TESTS=ON -DLLVM_USE_SYMLINKS=ON \
                   -DLLVM_TABLEGEN_EXE=${STAGING_BINDIR_NATIVE}/llvm-tblgen"
 
 BBCLASSEXTEND = "native nativesdk"

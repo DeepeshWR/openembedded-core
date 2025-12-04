@@ -16,6 +16,7 @@ SECTION = "devel"
 
 require common-clang.inc
 require common-source.inc
+require common-testsuite.inc
 
 BPN = "clang"
 
@@ -68,7 +69,7 @@ EXTRA_OECMAKE += "-DLLVM_ENABLE_ASSERTIONS=OFF \
                   -DLLVM_NATIVE_TOOL_DIR=${STAGING_BINDIR_NATIVE} \
                   -DLLVM_TABLEGEN_EXE=${STAGING_BINDIR_NATIVE}/llvm-tblgen \
                   -DCLANG_TABLEGEN_EXE=${STAGING_BINDIR_NATIVE}/clang-tblgen \
-                  -DLLVM_INCLUDE_TESTS=OFF \
+                  -DCLANG_INCLUDE_TESTS=ON \
                   -DCROSS_TOOLCHAIN_FLAGS_NATIVE='-DCMAKE_TOOLCHAIN_FILE=${WORKDIR}/toolchain-native.cmake' \
                   -DLLVM_LIBDIR_SUFFIX=${LLVM_LIBDIR_SUFFIX} \
                   -DCMAKE_AR=${STAGING_BINDIR_NATIVE}/llvm-ar \
