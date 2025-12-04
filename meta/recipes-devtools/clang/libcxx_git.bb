@@ -7,6 +7,7 @@ SECTION = "base"
 
 require common-clang.inc
 require common-source.inc
+require common-testsuite.inc
 
 inherit cmake
 
